@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de MEIs por Data - CNPJLeads</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buscar Empresas MEI por Data de Abertura</h1>
+        <p>Utilize o formulário abaixo para buscar emails de Microempreendedores Individuais (MEI) criados em um período específico.</p>
+
+        <form id="search-form">
+            <div class="form-group">
+                <label for="date-from">Data de Abertura - A partir de:</label>
+                <input type="date" id="date-from" required>
+            </div>
+            <div class="form-group">
+                <label for="date-to">Data de Abertura - Até:</label>
+                <input type="date" id="date-to" required>
+            </div>
+            <button type="submit" id="search-button">Buscar MEIs</button>
+        </form>
+
+        <div id="results-area" class="results-area">
+            <h2>Resultados da Busca</h2>
+            <p id="status-message">Aguardando busca...</p>
+            <textarea id="email-list" readonly placeholder="Os emails das empresas encontradas aparecerão aqui."></textarea>
+            <button id="copy-button" disabled>Copiar Emails</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
