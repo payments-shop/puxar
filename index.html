@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca de MEIs por Data - CNPJLeads</title>
+    <title>CNPJLeads - Busca de MEIs por Data</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Buscar Empresas MEI por Data de Abertura</h1>
-        <p>Utilize o formulário abaixo para buscar emails de Microempreendedores Individuais (MEI) criados em um período específico.</p>
+        <h1>Busca de Emails de MEIs por Data</h1>
+        <p>Utilize o formulário abaixo para buscar empresas MEI criadas em um período específico.</p>
 
-        <form id="search-form">
+        <form id="searchForm">
             <div class="form-group">
-                <label for="date-from">Data de Abertura - A partir de:</label>
-                <input type="date" id="date-from" required>
+                <label for="dateFrom">Data de Abertura - A partir de (DD/MM/AAAA):</label>
+                <input type="text" id="dateFrom" placeholder="Ex: 01/01/2023" required>
             </div>
             <div class="form-group">
-                <label for="date-to">Data de Abertura - Até:</label>
-                <input type="date" id="date-to" required>
+                <label for="dateTo">Data de Abertura - Até (DD/MM/AAAA):</label>
+                <input type="text" id="dateTo" placeholder="Ex: 31/12/2023" required>
             </div>
-            <button type="submit" id="search-button">Buscar MEIs</button>
+            <button type="submit" id="searchButton">Buscar Empresas</button>
         </form>
 
-        <div id="results-area" class="results-area">
+        <div id="statusMessage" class="message"></div>
+
+        <div class="results-container">
             <h2>Resultados da Busca</h2>
-            <p id="status-message">Aguardando busca...</p>
-            <textarea id="email-list" readonly placeholder="Os emails das empresas encontradas aparecerão aqui."></textarea>
-            <button id="copy-button" disabled>Copiar Emails</button>
+            <p id="totalResults">Total de Empresas Encontradas: 0</p>
+            <p id="totalEmails">Total de Emails Coletados: 0</p>
+            <button id="downloadButton" style="display: none;">Baixar Lista de Emails (.txt)</button>
+            <div class="email-list-wrapper">
+                <textarea id="emailList" readonly placeholder="Os emails coletados aparecerão aqui..."></textarea>
+            </div>
         </div>
     </div>
 
